@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Primary color-->
+    <color name="white">#FFFFFF</color>
+    <color name="trans">#00000000</color>
+    <color name="blue">#5199FB</color>
+    <color name="orange">#DBBA92</color>
+    <color name="color_primary_30">#4DFD9500</color>
+    <color name="color_mi_primary_text">#271C0C</color>
+    <color name="color_lenovo_primary_text">#271C0C</color>
+    <color name="color_mi_second_text">#80000000</color>
+    <color name="color_text_black">#FF271C0C</color>
+
+    <color name="color_mi_bg_button_pressed">#DBBA92</color>
+    <color name="gray_disabled">@color/light_gray</color>
+    <color name="light_gray">#D0D0D0</color>
+
+    <color name="color_mi_edittext_border">#CBCBCB</color>
+    <color name="color_mi_edittext_hint">#4D000000</color>
+    <color name="color_mi_list_divider">#e5e5e5</color>
+
+</resources>

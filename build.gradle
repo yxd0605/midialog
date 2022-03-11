@@ -1,0 +1,57 @@
+//noinspection GradleCompatible
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+uploadArchives {
+    repositories.mavenDeployer {
+        def mavenDirPath = file('E:\\mavendir') // 本地存放目录(自行选择)，可放在gradle.properties文件中引用
+        repository(url: "file://${mavenDirPath.absolutePath}") // 必须双引号，单引号不会转义$
+        pom.project {
+            groupId "com.eli.midialog" // 可以随意取，一般取包名
+            artifactId "midialog" // 可以随意取，一般取库的名字
+            version "0.0.1" // 版本号
+        }
+    }
+}
+
+android {
+    compileSdkVersion var.compileSdkVersion
+//    buildToolsVersion var.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion var.minSdkVersion
+        targetSdkVersion 28
+        versionCode 1
+        versionName "0.0.1"
+
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    allprojects {
+        repositories {
+            // PhotoView for Zoom ImageView
+            maven { url "https://jitpack.io" }
+            maven { url 'https://maven.google.com' }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //noinspection GradleCompatible
+    implementation "androidx.appcompat:appcompat:1.2.0"
+    testImplementation 'junit:junit:4.12'
+    implementation "androidx.recyclerview:recyclerview:$var.supportLibraryVersion"
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    // https://github.com/yqritc/RecyclerView-FlexibleDivider
+    implementation 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+    // https://github.com/ChaosLeong/PinView
+    implementation 'com.chaos.view:pinview:1.4.2'
+}

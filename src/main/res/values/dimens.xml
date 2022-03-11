@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Text Size -->
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+
+    <dimen name="mi_dialog_margin">30dp</dimen>
+    <dimen name="mi_widget_margin">30dp</dimen>
+
+    <dimen name="mi_dialog_edittext_border">1px</dimen>
+    <dimen name="mi_dialog_edittext_radius">3dp</dimen>
+    <dimen name="mi_dialog_edittext_height">30dp</dimen>
+
+    <dimen name="mi_dialog_button_border_negative">-2px</dimen>
+    <dimen name="mi_dialog_button_border">1px</dimen>
+    <dimen name="mi_dialog_button_radius">25dp</dimen>
+    <dimen name="mi_dialog_button_height">40dp</dimen>
+    <dimen name="mi_dialog_list_item_height">64dp</dimen>
+    <dimen name="mi_dialog_list_divider_height">1px</dimen>
+    <dimen name="mi_dialog_confirm_edittext_size">40dp</dimen>
+
+</resources>

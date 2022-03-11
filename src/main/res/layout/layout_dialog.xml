@@ -1,0 +1,265 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_bg_mi_dialog"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mi_dialog_margin"
+        android:layout_marginTop="@dimen/mi_widget_margin"
+        android:layout_marginRight="@dimen/mi_dialog_margin"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mi_dialog_margin"
+        android:layout_marginRight="@dimen/mi_dialog_margin"
+        android:gravity="center"
+        android:lineSpacingExtra="13dp" />
+
+    <TextView
+        android:id="@+id/txt_dialog_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mi_dialog_margin"
+        android:layout_marginRight="@dimen/mi_dialog_margin"
+        android:gravity="center"
+        android:lineSpacingExtra="13dp" />
+
+    <EditText
+        android:id="@+id/et_dialog_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mi_dialog_edittext_height"
+        android:layout_marginLeft="@dimen/mi_dialog_margin"
+        android:layout_marginRight="@dimen/mi_dialog_margin"
+        android:background="@drawable/bg_dialog_edittext"
+        android:gravity="center_vertical"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:singleLine="true"
+        android:visibility="gone" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/pin_view"
+        style="@style/PinWidget.PinView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mi_dialog_margin"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/mi_dialog_margin"
+        android:cursorVisible="true"
+        android:inputType="text"
+        android:itemBackground="@color/white"
+        android:textColor="@color/color_mi_primary_text"
+        android:textColorHint="@color/color_mi_edittext_hint"
+        android:textSize="@dimen/text_size_14"
+        android:visibility="gone"
+        app:cursorColor="@color/blue"
+        app:itemHeight="@dimen/mi_dialog_confirm_edittext_size"
+        app:itemRadius="@dimen/mi_dialog_edittext_radius"
+        app:itemSpacing="10dp"
+        app:itemWidth="@dimen/mi_dialog_confirm_edittext_size"
+        app:lineColor="@color/color_mi_edittext_border"
+        app:lineWidth="1px"
+        app:viewType="rectangle" />
+
+    <LinearLayout
+        android:id="@+id/layout_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/recycler_view_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mi_dialog_list_divider_height"
+            android:background="@color/color_mi_list_divider"
+            android:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mi_widget_margin"
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="@dimen/mi_widget_margin"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_dialog_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SAMBA账号"
+                android:textColor="@color/color_mi_primary_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <TextView
+                android:id="@+id/tv_dialog_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_toRightOf="@+id/tv_dialog_one"
+                android:text="123456"
+                android:textColor="@color/color_mi_primary_text"
+                android:textSize="@dimen/text_size_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mi_dialog_edittext_height"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_dialog_edittext"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp">
+
+            <TextView
+                android:id="@+id/tv_input_one"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/tv_password"
+                android:textColor="@color/color_mi_primary_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <EditText
+                android:id="@+id/edit_input_one"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/tv_input_one"
+                android:background="@color/trans"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_please_input_password"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:textColor="@color/color_mi_primary_text"
+                android:textColorHint="@color/color_mi_edittext_hint"
+                android:textSize="@dimen/text_size_12" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mi_dialog_edittext_height"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_dialog_edittext"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp">
+
+            <TextView
+                android:id="@+id/tv_input_two"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/tv_confirm_password"
+                android:textColor="@color/color_mi_primary_text"
+                android:textSize="@dimen/text_size_12" />
+
+            <EditText
+                android:id="@+id/edit_input_two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/tv_input_two"
+                android:background="@color/trans"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_please_confirm_password"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:textColor="@color/color_mi_primary_text"
+                android:textColorHint="@color/color_mi_edittext_hint"
+                android:textSize="@dimen/text_size_12" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_check"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mi_dialog_button_height"
+        android:layout_marginLeft="@dimen/mi_dialog_margin"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="-25dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <CheckBox
+            android:id="@+id/cb_select"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_check_box_radio"
+            android:button="@null"
+            android:clickable="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/cb_select"
+            android:text="@string/tv_not_show_again"
+            android:textColor="@color/color_mi_primary_text"
+            android:textSize="@dimen/text_size_12" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_dialog_mid"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/mi_dialog_list_item_height"
+        android:background="@drawable/selector_bg_mi_dialog_button"
+        android:text="@string/mi_default_text_neutral"
+        android:textColor="@color/orange"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/layout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mi_dialog_margin"
+        android:layout_marginTop="@dimen/mi_widget_margin"
+        android:layout_marginRight="@dimen/mi_dialog_margin"
+        android:layout_marginBottom="@dimen/mi_widget_margin"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_dialog_left"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/mi_dialog_button_height"
+            android:layout_weight="1.0"
+            android:background="@drawable/selector_bg_mi_dialog_button_left"
+            android:text="@string/mi_default_text_negative" />
+
+        <Button
+            android:id="@+id/btn_dialog_right"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/mi_dialog_button_height"
+            android:layout_marginStart="@dimen/mi_dialog_button_border_negative"
+            android:layout_weight="1.0"
+            android:background="@drawable/selector_bg_mi_dialog_button_right"
+            android:text="@string/mi_default_text_positive" />
+    </LinearLayout>
+</LinearLayout>
